@@ -18,11 +18,11 @@ module tt_um_SUMADOR (
 
 wire S1, C1, S2;
   
-  C_XOR U1 (.OUT(S1), .A(A), .B(B));
-  C_AND U2 (.OUT(C1), .A(A), .B(B));
-  C_XOR U3 (.OUT(SUMA), .A(S1), .B(C_IN));
-  C_AND U4 (.OUT(S2), .A(S1), .B(C_IN));
-  C_XOR U5 (.OUT(C_OUT), .A(S2), .B(C1));
+    C_XOR U1 (.OUT(S1), .A(ui_in[0]), .B(ui_in[1]));
+    C_AND U2 (.OUT(C1), .A(ui_in[0]), .B(ui_in[1]));
+    C_XOR U3 (.OUT(uo_out[0]), .A(S1), .B(ui_in[2]));
+    C_AND U4 (.OUT(S2), .A(S1), .B(ui_in[2]));
+    C_XOR U5 (.OUT(uo_out[1]), .A(S2), .B(C1));
 
 
     assign uo_out [7:2] = 6'b0;	// Las salidas que NO estan dedicadas se mandan a 0 (Son 6 salidas que no se usan para este caso)
