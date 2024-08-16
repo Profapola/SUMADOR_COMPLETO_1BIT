@@ -30,6 +30,6 @@ wire S1, C1, S2;
     assign uo_out [7:0] = 8'b0	// Las I/O que no se usan se mandan a 0 (esn este caso son 8 salidas)
 
   // List all unused inputs to prevent warnings
-        wire _unused = &{ena, clk, rst_n, ui_in [7:3], uio_in [7:0], 1'b0};
+        wire _unused = &{ena, clk, rst_n, ui_in[7:3], uio_in[7:0], 1'b0};
 
 endmodule
